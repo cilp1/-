@@ -177,7 +177,7 @@ Tab:CreateToggle({
                      :WaitForChild("ValueChange")
                      :FireServer(unpack(args))
                end)
-               task.wait(0.01)
+               task.wait(0.03)
             end
          end)
       end
