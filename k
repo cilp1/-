@@ -147,7 +147,7 @@ Tab:CreateToggle({
                if not success then
                   warn("[Auto Headlock] Error: " .. tostring(err))
                end
-               task.wait(0.020)  -- Very frequent (~40x per second) — lower to 0.015 if you want even faster, but test for detection/kicks
+               task.wait(0.025)  -- Very frequent (~40x per second) — lower to 0.015 if you want even faster, but test for detection/kicks
             end
          end)
       end
