@@ -81,7 +81,7 @@ Tab:CreateToggle({
             while autoStomp do
                local args = {"Stomp"}
                game:GetService("ReplicatedStorage"):WaitForChild("events"):WaitForChild("MainKeys"):FireServer(unpack(args))
-               task.wait(0.4)
+               task.wait(0.3)
             end
          end)
       end
@@ -177,7 +177,7 @@ Tab:CreateToggle({
                      :WaitForChild("ValueChange")
                      :FireServer(unpack(args))
                end)
-               task.wait(0.05)
+               task.wait(0.1)
             end
          end)
       end
