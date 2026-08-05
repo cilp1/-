@@ -2,7 +2,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
    Name = "Private script",
    LoadingTitle = "loading",
-   LoadingSubtitle = "made by kd",
+   LoadingSubtitle = "For kd and mori only",
    ConfigurationSaving = {
       Enabled = true,
       FolderName = nil,
@@ -62,7 +62,7 @@ Tab:CreateToggle({
             while autoPush do
                local args = {"Push"}
                game:GetService("ReplicatedStorage"):WaitForChild("events"):WaitForChild("MainKeys"):FireServer(unpack(args))
-               task.wait(0.3)
+               task.wait(0.05)
             end
          end)
       end
@@ -81,7 +81,7 @@ Tab:CreateToggle({
             while autoStomp do
                local args = {"Stomp"}
                game:GetService("ReplicatedStorage"):WaitForChild("events"):WaitForChild("MainKeys"):FireServer(unpack(args))
-               task.wait(0.3)
+               task.wait(0.1)
             end
          end)
       end
@@ -147,7 +147,7 @@ Tab:CreateToggle({
                if not success then
                   warn("[Auto Headlock] Error: " .. tostring(err))
                end
-               task.wait(0.025)  -- Very frequent (~40x per second) — lower to 0.015 if you want even faster, but test for detection/kicks
+               task.wait(0.020)  -- Very frequent (~40x per second) — lower to 0.015 if you want even faster, but test for detection/kicks
             end
          end)
       end
@@ -184,29 +184,6 @@ Tab:CreateToggle({
    end,
 })
 
---auto block
-local autoBlock = false
-local VIM = game:GetService("VirtualInputManager")
-
-Tab:CreateToggle({
-    Name = "Auto Block (pc only)",
-    CurrentValue = false,
-    Flag = "AutoBlockT",
-    Callback = function(Value)
-        autoBlock = Value
-
-        if autoBlock then
-            task.spawn(function()
-                while autoBlock do
-                    VIM:SendKeyEvent(true, Enum.KeyCode.T, false, game)
-                    task.wait(0.05)
-                    VIM:SendKeyEvent(false, Enum.KeyCode.T, false, game)
-                    task.wait(0.1)
-                end
-            end)
-        end
-    end,
-})
 Rayfield:Notify({
    Title = "Script Updated",
    Content = "addded auto escape - op",
